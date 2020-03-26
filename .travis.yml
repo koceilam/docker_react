@@ -6,4 +6,5 @@ before_install:
   - docker build -t kdevelop/docker_react -f Dockerfile.dev .
   
 script:
-  - docker run kdevelop/docker_react npm run test -- -- coverage
+  #- docker run kdevelop/docker_react npm run test -- -- coverage
+  - docker run -e CI=true kdevelop/docker_react npm run test
